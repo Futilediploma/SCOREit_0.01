@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}ScoreIt – Simplify Game Score Management{% endblock %}
+
+{% block content %}
+    <div class="hero">
+        <p>The easiest way to collect, verify, and report youth sports scores.</p>
+        <div class="form-container">
+            <h2>Login</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+
+ 
+    <footer>
+        &copy; {% now "Y" %} ScoreIt. All rights reserved.
+    </footer>
+{% endblock %}

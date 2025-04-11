@@ -1,0 +1,11 @@
+{% extends 'core/dashboard_base.html' %}
+{% block title %}Edit League | SCOREit{% endblock %}
+
+{% block content %}
+<h2>Edit League: {{ league.name }}</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Changes</button>
+</form>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}ScoreIt – Simplify Game Score Management{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'core/css/landing.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="hero-content">
+        <h1>Welcome to <span class="highlight">ScoreIt</span></h1>
+        <p class="tagline">Simplify how your league collects, verifies, and reports game scores.</p>
+        <a href="/login/" class="btn-primary">Get Started</a>
+    </div>
+</div>
+
+<div class="features-section">
+    <div class="feature">
+        <h2>📊 What is ScoreIt?</h2>
+        <p>
+            ScoreIt streamlines youth sports scoring by automating coach and referee communication. No more spreadsheets or manual emails—just results that make sense.
+        </p>
+    </div>
+
+    <div class="feature">
+        <h2>⚙️ How It Works</h2>
+        <ul class="feature-list">
+            <li>🗓️ Set up your league and schedule with ease</li>
+            <li>📬 ScoreIt sends game-day emails automatically</li>
+            <li>✅ Scores are submitted and verified with both coaches</li>
+            <li>🏆 Your dashboard updates once scores are matched</li>
+        </ul>
+    </div>
+</div>
+
+<footer class="footer">
+    &copy; {% now "Y" %} ScoreIt. All rights reserved.
+</footer>
+{% endblock %}

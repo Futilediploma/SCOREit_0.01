@@ -1,0 +1,16 @@
+{% extends 'core/dashboard_base.html' %}
+{% block title %}Your Leagues | SCOREit{% endblock %}
+
+{% block content %}
+<h2>Your Leagues</h2>
+<ul>
+    {% for league in leagues %}
+        <li>
+            {{ league.name }}
+            <a href="{% url 'edit_league' league.id %}">Edit</a>
+        </li>
+    {% empty %}
+        <li>No leagues yet. <a href="{% url 'add_league' %}">Add one</a>.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

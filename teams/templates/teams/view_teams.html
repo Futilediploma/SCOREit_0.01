@@ -1,0 +1,16 @@
+{% extends 'core/dashboard_base.html' %}
+{% block title %}Your Teams | SCOREit{% endblock %}
+
+{% block content %}
+<h2>Your Teams</h2>
+<ul>
+    {% for team in teams %}
+        <li>
+            {{ team.name }}
+            <a href="{% url 'edit_team' team.id %}">Edit</a>
+        </li>
+    {% empty %}
+        <li>No teams yet. <a href="{% url 'add_team' %}">Add one</a>.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

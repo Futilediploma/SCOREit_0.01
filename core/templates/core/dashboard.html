@@ -1,0 +1,30 @@
+{% extends 'core/dashboard_base.html' %}
+{% block title %}Dashboard | SCOREit{% endblock %}
+
+{% block content %}
+<div class="dashboard-header">
+    <h2>Welcome, {{ user.username }}!</h2>
+    <p>Here are your active leagues:</p>
+</div>
+
+{% if leagues %}
+    <ul class="league-list">
+        {% for league in leagues %}
+        <li class="league-item">
+            <strong>{{ league.name }}</strong><br>
+            {{ league.notes|default:"No description" }}<br>
+            Created on: {{ league.created_at|date:"M d, Y" }}<br>
+            <a href="{% url 'edit_league' league.id %}" class="edit-link">Edit</a>
+            <a href="{% url 'add_team' league.id %}" class="edit-link">Add Team</a>
+            <a href="{% url 'view_teams' league.id %}" class="edit-link">View Teams</a>
+            <form action="{% url 'delete_league' league.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="delete-link">Delete</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>You haven’t created any leagues yet. <a href="{% url 'add_league' %}">Create one now</a>.</p>
+{% endif %}
+{% endblock %}

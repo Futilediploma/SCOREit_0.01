@@ -1,0 +1,17 @@
+{% extends 'core/dashboard_base.html' %}
+{% block title %}Add League | SCOREit{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Add a New League</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Create League</button>
+    </form>
+
+    <p><a href="{% url 'league_list' %}">← Back to League List</a></p>
+</div>
+{% endblock %}

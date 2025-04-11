@@ -1,0 +1,104 @@
+/* Full navbar background (spans 100%) */
+.navbar {
+    background-color: #8A4B2D; /* Burnt orange */
+    padding: 16px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Inner navbar content (3/4 width, centered) */
+.navbar-content {
+    max-width: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo style */
+.logo {
+    height: 48px;
+    vertical-align: middle;
+}
+
+/* Navigation links container */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+/* Individual link styles */
+.nav-links a {
+    margin-left: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Hover state */
+.nav-links a:hover {
+    color: #FFD8B1;
+    text-decoration: underline;
+}
+
+/* Global base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F9F9F9;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.messages {
+    padding: 10px;
+    margin: 10px 0;
+    list-style: none;
+}
+
+.messages .success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 4px;
+}
+.form-container {
+    padding: 2rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #d67229;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.edit-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #d67229;  /* Same as your button's background-color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.edit-link:hover {
+    background-color: #c05a1f;  /* A slight variation for hover state */
+}
